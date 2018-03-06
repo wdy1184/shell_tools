@@ -12,13 +12,11 @@ syncGit() {
     git push
 }
 
-echo `pwd`
-syncGit
 cd ../
 base_dir=`pwd`
 
 # 包含 study 或者是 dot_file 文件夹都提交
-dirs=`ls -l | grep -E "study|dot_file" | awk '{print $9;}'`
+dirs=`ls -l | grep -E "study|dot_file|tools" | awk '{print $9;}'`
 for dir in $dirs
 do
     echo '+++++'
